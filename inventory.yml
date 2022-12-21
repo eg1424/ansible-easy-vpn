@@ -8,9 +8,9 @@ all:
       ansible_connection: local
 
   vars:
-    username: notthebee
+    username: app
 
-    root_host: example.duckdns.org
+    root_host: homeserver.lol
 
     enable_username_creation: yes
 
@@ -52,7 +52,7 @@ all:
     # https://docs.oracle.com/cd/E23824_01/html/E26033/glset.html
     locale: en_US.UTF-8
 
-    timezone: Europe/Berlin
+    timezone: Asia/Singapore
 
     # Set the time at which the system should reboot after installing updates (24H format)
     autoupdate_reboot_time: 03:00
@@ -64,7 +64,7 @@ all:
 
     # Optional e-mail for notifications (unattended upgrades, banned IPs, etc.)
     # Leave everything in place if you don't want any notifications
-    email_login: root@localhost
+    email_login: eg1424@gmail.com
 
     email: "{{ email_login }}"
 
@@ -94,7 +94,7 @@ all:
     ufw_ports:
       - port: "{{ wireguard_port }}"
         proto: "udp"
-      - port: "80"
+      - port: "81"
         proto: "tcp"
       - port: "443"
         proto: "tcp"
