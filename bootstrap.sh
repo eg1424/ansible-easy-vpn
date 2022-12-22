@@ -195,14 +195,14 @@ domain_ip=$(dig +short @1.1.1.1 ${root_host})
 #  echo
 #done
 
-echo
-echo "Running certbot in dry-run mode to test the validity of the domain..."
-if [[ "$adguard_enable" =~ ^[yY]$ ]]; then
-  $SUDO certbot certonly --non-interactive --break-my-certs --force-renewal --agree-tos --email root@localhost.com --standalone --staging -d $root_host -d wg.$root_host -d auth.$root_host -d adguard.$root_host || exit
-else
-  $SUDO certbot certonly --non-interactive --break-my-certs --force-renewal --agree-tos --email root@localhost.com --standalone --staging -d $root_host -d wg.$root_host -d auth.$root_host || exit
-fi
-echo "OK"
+#echo
+#echo "Running certbot in dry-run mode to test the validity of the domain..."
+#if [[ "$adguard_enable" =~ ^[yY]$ ]]; then
+#  $SUDO certbot certonly --non-interactive --break-my-certs --force-renewal --agree-tos --email root@localhost.com --standalone --staging -d $root_host -d wg.$root_host -d auth.$root_host -d adguard.$root_host || exit
+#else
+#  $SUDO certbot certonly --non-interactive --break-my-certs --force-renewal --agree-tos --email root@localhost.com --standalone --staging -d $root_host -d wg.$root_host -d auth.$root_host || exit
+#fi
+#echo "OK"
 
 echo "root_host: \"${root_host}\"" >> $HOME/ansible-easy-vpn/custom.yml
 
